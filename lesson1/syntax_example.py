@@ -14,7 +14,7 @@ value_contains_one = 1
 
 
 def my_func():
-    pass
+    print('henlo my friend')
 
 
 class MyClass:
