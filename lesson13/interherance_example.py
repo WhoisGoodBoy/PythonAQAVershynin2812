@@ -68,6 +68,6 @@ a = GrandChild()
 a.m()
 a.m_from_child_2()
 a.m_from_human()
-
+print(GrandChild.mro())
 
 
