@@ -28,16 +28,19 @@ class Company:
     def name(self):
         return self.__name
 
+    @property
+    def industry(self):
+        return self.__industry
 
-
-building1 = Building('Twice Tower', 'Myloslavska 65')
-print(len(building1))
-openai = Company('OpenAI', 'artificial intelligence')
-nails_company = Company('Best Nails', 'beauty')
-building1[1] = openai
-building1[2] = nails_company
-print(len(building1))
-print(building1[2].name)
-building2 = copy.copy(building1)
-print(building1[2] == building2[2])
-print(building1[2] is building2[2])
+if __name__ == '__main__':
+    building1 = Building('Twice Tower', 'Myloslavska 65')
+    print(len(building1))
+    openai = Company('OpenAI', 'artificial intelligence')
+    nails_company = Company('Best Nails', 'beauty')
+    building1[1] = openai
+    building1[2] = nails_company
+    print(len(building1))
+    print(building1[2].name)
+    building2 = copy.copy(building1)
+    print(building1[2] == building2[2])
+    print(building1[2] is building2[2])
