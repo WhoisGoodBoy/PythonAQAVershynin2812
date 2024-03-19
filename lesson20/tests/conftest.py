@@ -27,4 +27,9 @@ def sale(driver):
 @pytest.fixture
 def purina_pro_plan_chicken(driver):
     driver.get('https://petslike.ua/purina-pro-plan-sterilised-nutrisavour-cats-chicken-sauce')
+    print(f"Cookies:{driver.get_cookies()}")
+    print(f"Cookies:{driver.add_cookie({'name':'mysterious_cookie', 'value':'misterious_value'})}")
+    print(f"Single cookie:{driver.get_cookie('mysterious_cookie')}")
+    driver.execute_script('window.localStorage["es_webpush_inited"]=2')
+    print(driver.execute_script('return window.localStorage["es_webpush_inited"];'))
     yield Product(driver)

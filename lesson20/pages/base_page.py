@@ -13,11 +13,9 @@ class BasePage:
         self.locators = BaseLocators()
 
 
-    def by_locator(self, locator,locator_type = 'xpath'):
-        return (locator_type, locator)
 
-    def wait_until_element_presence(self, locator:tuple, locator_type='xpath'):
-        return self.web_driver_wait.until(EC.presence_of_element_located(self.by_locator(locator, locator_type)))
+    def wait_until_element_presence(self, locator:tuple):
+        return self.web_driver_wait.until(EC.presence_of_element_located(locator))
 
     def click_on_element(self, locator, scroll=False):
         if scroll:
@@ -35,4 +33,21 @@ class BasePage:
     def return_cart_counter(self):
         cart_counter = self.wait_until_element_presence(self.locators.locator_cart_items_counter)
         return int(cart_counter.text)
+
+
+    def navigate_to_dogs(self):
+        dogs = self.wait_until_element_presence(self.locators.locator_for_dogs)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(dogs).perform()
+        dry_feed = self.wait_until_element_presence(self.locators.locator_dry_feed)
+        return dry_feed.is_displayed()
+
+    def navigate_to_category(self,category, items_list):
+        category_object = self.wait_until_element_presence(category)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(category_object).perform()
+        for item in items_list:
+            item_object = self.wait_until_element_presence(item)
+            assert item_object.is_displayed()
+
 

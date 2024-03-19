@@ -3,12 +3,14 @@ from lesson20.core import ProductLocators
 
 
 class Product(BasePage):
-    def __init__(self, driver):
+    def __init__(self, driver, start_page=False):
         super().__init__(driver)
-        self.locators = ProductLocators()
+        if start_page:
+            self.driver.get(start_page)
+        self.locators = ProductLocators
 
     def click_buy_one(self):
-        self.click_on_element(self.locators.locator_button_buy_one)
+        self.click_on_element(self.locators.change_to_tuple())
 
     def click_buy_multiple(self):
         self.click_on_element(self.locators.locator_button_buy_multiple)
