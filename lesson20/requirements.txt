@@ -42,7 +42,7 @@ PyDispatcher==2.0.7
 pymongo==4.5.0
 pyOpenSSL==23.3.0
 PySocks==1.7.1
-pytest==7.4.0
+pytest
 pytest-html==4.1.1
 pytest-html-reporter==0.2.9
 pytest-metadata==3.0.0
