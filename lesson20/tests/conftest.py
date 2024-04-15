@@ -11,6 +11,7 @@ from selenium.webdriver.chrome.options import Options
 def driver():
     options = Options()
     options.add_argument('--headless=new')
+    options.add_argument('--no-sandbox')
     driver = Chrome(options=options)
     driver.maximize_window()
     yield driver
