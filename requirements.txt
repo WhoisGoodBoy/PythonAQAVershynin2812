@@ -54,7 +54,7 @@ queuelib==1.6.2
 requests==2.31.0
 requests-file==1.5.1
 scrapy-fake-useragent==1.4.4
-selenium==4.11.2
+selenium
 service-identity==23.1.0
 six==1.16.0
 sniffio==1.3.0
