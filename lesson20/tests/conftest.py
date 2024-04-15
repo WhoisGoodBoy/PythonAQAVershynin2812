@@ -4,10 +4,14 @@ from lesson20.pages.dashboard_page import Dashboard
 from lesson20.pages.category_page import CategoryPage
 from lesson20.pages.product_page import Product
 
+from selenium.webdriver.chrome.options import Options
+
 
 @pytest.fixture
 def driver():
-    driver = Chrome()
+    options = Options()
+    options.add_argument('--headless=new')
+    driver = Chrome(options=options)
     driver.maximize_window()
     yield driver
     driver.quit()
