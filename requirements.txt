@@ -71,7 +71,7 @@ typing_extensions==4.6.3
 tzdata==2023.3
 urllib3==2.0.4
 w3lib==2.1.2
-webdriver-manager==3.8.6
+webdriver-manager
 wsproto==1.2.0
 xmltodict==0.13.0
 zope.interface==6.1
