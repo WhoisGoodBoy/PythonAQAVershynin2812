@@ -11,7 +11,7 @@ url = "https://petslike.ua/"
 @pytest.fixture
 def page():
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        browser = p.chromium.launch(executablePath='/root/.cache/ms-playwright/chromium-1112/chrome-linux/chrome')
         page = browser.new_page()
         yield page
         page.close()
