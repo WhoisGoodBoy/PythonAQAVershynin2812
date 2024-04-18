@@ -39,3 +39,4 @@ def purina_pro_plan_chicken(driver):
     driver.execute_script('window.localStorage["es_webpush_inited"]=2')
     print(driver.execute_script('return window.localStorage["es_webpush_inited"];'))
     yield Product(driver)
+

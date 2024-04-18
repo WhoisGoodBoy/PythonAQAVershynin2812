@@ -33,6 +33,7 @@ packaging==23.1
 pandas==2.0.1
 parsel==1.8.1
 pillow==10.2.0
+playwright
 pluggy==1.2.0
 Protego==0.3.0
 psycopg2==2.9.6
